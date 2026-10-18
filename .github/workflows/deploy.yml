@@ -16,7 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Test all 27 story routes
-        run: node --test tests/story.test.cjs
+        run: |
+          node --check assets/app.js
+          node --check data/story.js
+          node --test tests/*.test.cjs
   deploy:
     needs: validate
     runs-on: ubuntu-latest
