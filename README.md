@@ -1,30 +1,49 @@
-# 經彩青春協奏曲｜高中版分支互動遊戲
+# 經彩青春do｜高中版分支互動遊戲
 
-高中版「月經教育 x 概念運用」，採補習班四名同學（予晴、柏宇、子涵、怡庭）的群體議題討論。
+高中版「月經教育 × 概念運用」。劇情依上傳的《高中經彩DO_分支與選項+回饋.docx》製作，採「青春同盟」線上論壇情境，3 次選擇、13 個情境節點、39 個四字選項、27 條結局。
 
-## 劇本與評量狀態
-- 劇本來源：2026-10-18《高中版網格劇本・雙通關審議稿》（教師審議稿）。
-- 13 個情境節點、39 個四字行為選項、27 條完整路徑，結局皆提供「討論收束、做得好的地方、可以改進的地方」。
-- 審議稿暫定通關：**AAB、CBA**；其餘 25 條仍可完整體驗及查看回饋。
-- 這是審議階段的通關設定，**不代表正式的教學評量標準**。
+## 本版更新
 
-## 開啟網站
-- 首頁：https://kaoelvmpvm.github.io/jingcai-branching-story-game-sh/
-- 教師版劇本網格：https://kaoelvmpvm.github.io/jingcai-branching-story-game-sh/story-grid.html
+- 保留高中版既有藍紫色系（CSS 主色 `#5378b6`、深色 `#395c9a`、背景 `#f8fbff`），不採用國中版粉藍色。
+- 左上角改為「高中／經彩青春do／月經教育 × 概念運用」，版面細節與行動裝置斷點參照國中版。
+- 首頁、選項與所有回饋改成新版 Word 的「青春同盟」劇情。
+- 結尾刪除「討論收束」，回到國中版三張回饋卡：做得好的地方、可以改進的地方、關卡認證。
+- 結局兩階段：先回顧三次選擇，按「確定選擇」後才公開結果與回饋。
+- 圖片路徑採 `images/<節點代碼>.webp`，內含全部 13 張、均為 16:9。
+- 教師 `story-grid.html` 同步至新劇本，支援下載情境選項與結局 CSV。
 
-若 GitHub Pages 尚未啟用，請至 Settings → Pages → Build and deployment → Source 選 **GitHub Actions**；儲存後在 Actions 重新執行 Deploy senior-high branching game。連結僅在部署成功後有效。
+## 通關與來源說明
 
-## 程式結構
-- `index.html`：首頁、三次選擇、結局與回饋介面
-- `assets/app.js`：互動流程、上一頁、確認、回饋
-- `assets/style.css`：高中版藍紫色響應式設計
-- `data/story.js`：完整 13 節點與 27 結局資料。需要改劇本優先改此檔
-- `story-grid.html`：教師檢視及 CSV 下載
-- `tests/story.test.cjs`：完整分支與結局一致性驗證
-- `.github/workflows/deploy.yml`：CI 與 GitHub Pages
+新版 Word 的回饋表共四條標為「成功通關」：**BBA、BBC、BCA、CBA**。本版採這四條路徑，而非先前審議稿的 AAB、CBA。
 
-## 圖像素材
-現階段未製作高中版人物與劇情插圖，13 個情境均保留「劇情圖片」佔位。日後可直接上傳 `images/S0.webp`、`images/A1.webp`、`images/AA2.webp` 等共 13 張對應檔案，不必修改程式即可顯示。**國小版圖像和第一幕影片未移植**，以免內容錯置。
+Word「分支情境與跳轉說明」中 `BB2`、`BC2` 有 END 代碼交叉誤植：`BB2` 的 A（全面免稅）原誤寫 `END_BBC`、C（比照優惠）原誤寫 `END_BBA`；`BC2` 的 A（多樣選擇）原誤寫 `END_BCB`、B（傳統尚好）原誤寫 `END_BCA`。本版按選項的 A/B/C 順序及「選項結果與回饋說明」內容，修正為 `BB2: A→BBA、C→BBC` 與 `BC2: A→BCA、B→BCB`，不改寫回饋文字。
 
-## 驗證
-執行 `node --test tests/story.test.cjs`。網站為純靜態 HTML/CSS/JavaScript，不需要安裝 Node 套件即可開啟（驗證腳本使用 Node 標準函式庫）。
+**高中專屬通關密碼尚未提供**，程式不會虛構密碼，也不會照搬國中版的 `2599`。目前以明確的成功／未通關訊息呈現。
+
+## 檔案結構
+
+- `index.html`：封面、遊戲、結尾和三張回饋卡。
+- `assets/style.css`：高中版原有主色搭配一致化響應式排版。
+- `assets/app.js`：遊戲流程、進度、上一頁、確認、返回重玩與圖片載入。
+- `data/story.js`：13 個情境、27 個結局與通關清單。
+- `images/*.webp`：13 張已依程式需求命名的圖。
+- `story-grid.html`：教師網格及 CSV 匯出。
+- `tests/story.test.cjs`：程式／圖片／路徑驗證。
+
+## 上傳 GitHub
+
+請先**解壓縮 ZIP**，到 `hepentpc/jingcai-branching-story-game-sh` 的 `main` 分支，透過 GitHub 網頁「Add file → Upload files」將解壓後的 `index.html`、`story-grid.html`、`README.md`、`assets/`、`data/`、`images/`、`tests/` 全部拖進上傳區，並確認保留資料夾路徑。重複檔案按「Replace／覆蓋」處理，確認變更後 Commit。
+
+**不可把 ZIP 本身直接當作網站檔案上傳**；GitHub Pages 不會自動解壓縮 ZIP。
+
+原 `.github/workflows/deploy.yml` 不需要變動。若網站已設定 GitHub Pages，以既有部署工作流程為準。
+
+## 測試
+
+在專案根目錄執行：
+
+```bash
+node --test tests/story.test.cjs
+```
+
+手動檢查至少 4 條通關（BBA、BBC、BCA、CBA）和任選 2 條未通關，以及 13 張圖片在相應情境正常載入。按確認前應看不到認證結果；按確認後出現三張回饋卡，不應有「討論收束」。

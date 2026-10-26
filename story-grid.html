@@ -1,196 +1,38 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>經彩青春協奏曲｜高中版劇本網格</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
+<title>經彩青春do｜高中版劇本網格</title>
 <script src="./data/story.js" defer></script>
 <style>
-.script-scene{white-space:pre-line}
-
-:root{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;color:#25354c;background:#fffaf9;font-size:17px}
-*{box-sizing:border-box}body{margin:0;line-height:1.75}main{max-width:1440px;padding:25px clamp(16px,3.4vw,55px) 80px;margin:auto}
-h1{font-size:clamp(30px,3.2vw,45px);line-height:1.35;margin:0 0 8px;letter-spacing:-.02em}
-h2{font-size:clamp(24px,2.6vw,30px);line-height:1.4;margin:0 0 17px}
-h3{font-size:21px;margin:0 0 8px}p{margin:0 0 12px}a{color:#9f3155}button{font:inherit;cursor:pointer;border:0}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 0 20px;border-bottom:1px solid #eadbe0}
-.brand{font-size:19px;font-weight:900;text-decoration:none;color:#263952}.brand span{color:#4c70ab}
-.header-actions{display:flex;gap:10px;flex-wrap:wrap}
-.control{border:1px solid #dfcbd0;border-radius:13px;background:white;color:#463847;font-size:15px;font-weight:800;padding:9px 14px}
-.control:hover{border-color:#b83a61;background:#fff0f4}
-.hero{padding:39px 0 28px}.eyebrow{font-size:15px;letter-spacing:.03em;color:#b23d62;font-weight:900}
-.intro{font-size:18px;color:#5b6472;max-width:920px;line-height:1.9}
-.counters{display:flex;flex-wrap:wrap;gap:12px;margin:23px 0 0}
-.stat{display:flex;align-items:center;gap:11px;border:1px solid #f0dfe3;padding:10px 16px;border-radius:15px;background:white;font-size:16px;font-weight:750}
-.stat strong{font-size:27px;color:#4c70ab}
-.notice{border-left:5px solid #d45b7c;background:#fff0f3;color:#683f4b;border-radius:0 13px 13px 0;padding:13px 17px;margin:20px 0 33px;font-size:16px;font-weight:700}
-.section{margin-top:45px}.section-header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.section-header p{color:#718092;font-size:16px}
-.start-box{text-align:center;padding:22px;border-radius:18px;background:#ffeef2;border:1px solid #f0cfd7;margin:4px auto 19px;max-width:560px}
-.node-id{font-size:15px;color:#ae3d63;font-weight:950;letter-spacing:.04em}
-.start-box h3{font-size:23px;margin:4px 0 3px}
-.flow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.branch{border:1px solid #e7d7db;background:white;border-radius:22px;padding:17px;min-width:0;box-shadow:0 7px 25px #844b5d0d}
-.branch-head{border-radius:15px;padding:17px;color:white;margin-bottom:13px}
-.branch:nth-child(1) .branch-head{background:#5475ad}
-.branch:nth-child(2) .branch-head{background:#397e8e}
-.branch:nth-child(3) .branch-head{background:#6c6bad}
-.branch-head h3{font-size:23px;margin:0;color:white}.branch-head small{font-size:14px;opacity:.95;font-weight:750}
-.subnode{background:#fff9f8;border:1px solid #efdee0;padding:13px;border-radius:15px;margin-top:11px}
-.subnode>strong{display:block;font-size:17px;margin:3px 0 7px}
-.finish-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.end-chip{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px;text-align:center;border:1px solid #eadce1;border-radius:11px;padding:8px 4px;background:white;font-size:14px;font-weight:900;color:#6a6371}
-.end-chip.pass{background:#e4f5eb;border-color:#a6dcc0;color:#1b7454}
-.end-chip small{font-size:12px;font-weight:750;color:#8a7280}
-.end-chip.pass small{color:#28795c}
-.node-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
-.script-card{border-radius:20px;border:1px solid #e6d7db;background:white;padding:22px;min-width:0;break-inside:avoid}
-.script-top{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-bottom:11px}
-.script-id{display:inline-block;padding:4px 13px;background:#fde9ee;border-radius:80px;font-weight:950;color:#a83b5b}
-.script-top h3{margin:0;font-size:21px}
-.script-scene{background:#fff9f6;border-left:4px solid #e3a4b5;padding:13px 15px;font-size:17px;line-height:1.92;border-radius:0 12px 12px 0}
-.choices{display:flex;flex-direction:column;gap:9px;margin-top:17px}
-.choice{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:10px;align-items:start;border:1px solid #ebdfe1;border-radius:12px;padding:12px}
-.choice-letter{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#f6e4ec;color:#a8395e;font-weight:950}
-.choice-main{font-size:16px;min-width:0}
-.choice-main strong{color:#ae3c5d}
-.choice-arrow{font-size:14px;font-weight:900;color:#826a78;white-space:nowrap;align-self:center}
-.table-scroll{overflow:auto;border:1px solid #e5d7db;border-radius:18px;background:white}
-table{border-collapse:collapse;width:100%;min-width:980px}
-thead th{position:sticky;top:0;z-index:1;background:#9f4664;color:white;padding:13px 15px;text-align:left;font-size:16px;white-space:nowrap}
-tbody td{font-size:16px;padding:13px 15px;border-top:1px solid #efe5e7;vertical-align:top;line-height:1.85}
-tbody tr:nth-child(even){background:#fff9fa}
-tbody tr:hover{background:#fff1f4}
-.code{font-weight:950;color:#9e3459;white-space:nowrap}
-.status{font-weight:850;white-space:nowrap;color:#866e79}
-.status.pass{color:#1b7855}
-.step-cell{min-width:190px}.feedback-cell{min-width:250px}
-.footer{margin:30px 0 0;color:#7e6b75;font-size:15px}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-@media(max-width:1000px){.flow-grid{grid-template-columns:1fr}.node-grid{grid-template-columns:1fr}.branch{max-width:none}}
-@media(max-width:560px){.hero{padding:28px 0 18px}.stat{padding:8px 12px}.stat strong{font-size:24px}.script-card{padding:16px}.choice{grid-template-columns:33px minmax(0,1fr);gap:9px}.choice-arrow{grid-column:2;justify-self:start}.flow-grid{gap:14px}.notice{font-size:15px}}
-@media print{
-  @page{size:A4 landscape;margin:12mm}
-  :root{font-size:12pt}
-  body{background:white}
-  main{max-width:none;padding:0}
-  .header-actions,.control{display:none!important}
-  .hero{padding:15px 0}
-  .section{page-break-before:always;margin-top:15px}
-  .branch,.script-card,.start-box{box-shadow:none}
-  .flow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-  .branch{padding:9px;border-radius:10px}
-  .branch-head{padding:9px}
-  .subnode{padding:7px;margin-top:7px}
-  .end-chip{font-size:10pt;padding:4px 1px}
-  .end-chip small{font-size:8pt}
-  .node-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .script-card{padding:12px;break-inside:avoid}
-  .script-card h3{font-size:14pt}
-  .script-scene,.choice-main{font-size:10pt}
-  table{min-width:0}
-  th,td{font-size:9pt!important;padding:6px!important}
-  thead{display:table-header-group}
-  tr{break-inside:avoid}
-}
+:root{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#22324b;background:#f8fbff;font-size:17px}
+*{box-sizing:border-box}body{margin:0}main{max-width:1380px;margin:auto;padding:24px clamp(16px,3vw,45px) 65px}h1{font-size:clamp(27px,3vw,42px);margin:0 0 5px}h2{margin:35px 0 15px;font-size:25px}p{line-height:1.85}a{color:#395c9a}button{font:inherit;cursor:pointer}.top{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;align-items:center;border-bottom:1px solid #d8e1ee;padding-bottom:18px}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{padding:10px 16px;border-radius:11px;border:1px solid #b7cce9;background:#fff;color:#395c9a;font-size:15px;font-weight:850}.btn:hover{background:#ebf2ff}.note{background:#eaf0fb;border-left:5px solid #5378b6;padding:12px 16px;border-radius:5px 12px 12px 5px;margin:21px 0}.summary{display:flex;gap:12px;flex-wrap:wrap}.summary span{background:#fff;padding:10px 15px;border:1px solid #dbe5f0;border-radius:13px}.summary strong{color:#5378b6;font-size:25px}.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.path{background:#fff;border:1px solid #d5e2f2;border-radius:17px;padding:16px;min-width:0}.path h3{font-size:20px;color:#395c9a;margin:0 0 7px}.path p{font-size:15px;margin:5px 0}.link{display:inline-block;border-radius:6px;padding:3px 7px;background:#e7efff;font-weight:800}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{min-width:0;border-radius:16px;padding:20px;border:1px solid #d9e2ee;background:#fff}.card h3{margin:7px 0;font-size:21px}.pill{font-size:13px;border-radius:99px;padding:3px 9px;background:#dfe9f8;color:#395c9a;font-weight:900}.scene{white-space:pre-line;line-height:1.9;font-size:16px;color:#3e4e63}.choice{padding:11px 0;border-top:1px solid #e7edf5;line-height:1.8;font-size:15px}.choice b{color:#395c9a}.choice small{color:#798aa2;font-weight:800}.outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.outcome{background:#fff;border:1px solid #dbe5f1;border-radius:15px;padding:16px;min-width:0}.outcome h3{margin:0 0 9px;font-size:20px}.outcome p{font-size:15px;line-height:1.82;margin:7px 0}.outcome .pass{color:#1d735b;background:#def3e8;border-radius:99px;padding:3px 7px;font-size:13px}.steps{padding-left:22px;margin:8px 0 12px;font-size:14px;color:#58708a}@media(max-width:950px){.outcomes{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.cards,.paths,.outcomes{grid-template-columns:1fr}.top{align-items:flex-start}}
 </style>
 </head>
 <body>
 <main>
-<header class="topbar">
-<a class="brand" href="./">經彩青春<span>Do</span></a>
-<div class="header-actions"><a href="./" class="control">前往互動遊戲</a><button class="control" id="download-scenes" type="button">下載情境與選項資料</button><button class="control" id="download-endings" type="button">下載結局與回饋資料</button><button class="control" id="print" type="button">列印／另存檔案</button></div>
-</header>
-<section class="hero">
-<p class="eyebrow">高中版 · 正式劇本資料同步顯示</p>
-<h1>經彩青春協奏曲｜完整劇本網格</h1>
-<p class="intro">依目前遊戲使用的劇本顯示所有情境、ABC 選項、下一個節點、三次選擇的 27 種結局與個別回饋。這份網格直接讀取遊戲資料，日後調整劇本時也會跟著更新。</p>
-<div class="counters" id="counters"></div>
-</section>
-<p class="notice">依據 2026-10-18「網格劇本・雙通關審議稿」，AAB、CBA 為暫定通關路徑，其餘 25 條皆有完整的討論收束與雙向回饋；正式評量規則仍待教學審議。</p>
-<section id="overview" class="section">
-<div class="section-header"><h2>一、完整分支總覽</h2><p>起點 → 第一層選擇 → 第二層選擇 → 第三層選擇 → 結局</p></div>
-<div id="start-node" class="start-box"></div>
-<div id="branch-grid" class="flow-grid"></div>
-</section>
-<section id="all-scenes" class="section">
-<div class="section-header"><h2>二、13 個情境與 ABC 選項</h2><p>保留目前正式劇本對話與四字行為標籤</p></div>
-<div id="node-grid" class="node-grid"></div>
-</section>
-<section id="all-endings" class="section">
-<div class="section-header"><h2>三、27 種結局及回饋</h2><p>討論收束、做得好的地方、可以改進的地方、審議稿通關狀態</p></div>
-<div class="table-scroll"><table><thead><tr><th>路徑</th><th>三次選擇的結果</th><th>討論收束</th><th>做得好的地方</th><th>可以改進的地方</th><th>過關狀態</th></tr></thead><tbody id="outcome-rows"></tbody></table></div>
-</section>
-<p class="footer">資料來源：本專案 data/story.js，頁面生成時直接讀取。每次匯出會以當時最新的資料為準。</p>
+<div class="top"><div><h1>高中版劇本網格</h1><p style="margin:0;color:#61758f">經彩青春do｜青春同盟線上論壇</p></div><div class="actions"><a class="btn" href="./">返回遊戲</a><button id="export-choices" class="btn" type="button">下載選項 CSV</button><button id="export-outcomes" class="btn" type="button">下載結局 CSV</button></div></div>
+<div class="note">本頁供教師核對劇本。文字以最新高中 Word 為依據；原始表格 BB2 與 BC2 的部分 END 代碼與選項順序交叉，系統已依 A／B／C 選項及回饋意義校正。成功通關路徑依原稿標示，不另創密碼。</div>
+<div class="summary"><span><strong>13</strong> 個情境節點</span><span><strong>39</strong> 個選項</span><span><strong>27</strong> 個結局</span><span><strong>4</strong> 條通關路徑</span></div>
+<h2>三回合分支總覽</h2><div class="paths" id="paths"></div>
+<h2>全部情境與選項</h2><div class="cards" id="nodes"></div>
+<h2>27 條結局與雙向回饋</h2><div class="outcomes" id="outcomes"></div>
 </main>
 <script>
-window.addEventListener("DOMContentLoaded",()=>{
-  const data=window.STORY_DATA;
-  if(!data){document.getElementById("start-node").textContent="無法讀取劇本資料。";return;}
-  const letters=["A","B","C"];
-  const pass=new Set(data.passRoutes||[]);
-  const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const order=["S0","A1","AA2","AB2","AC2","B1","BA2","BB2","BC2","C1","CA2","CB2","CC2"];
-  document.getElementById("counters").innerHTML=[
-    [Object.keys(data.nodes).length,"情境節點"],
-    [Object.keys(data.nodes).length*3,"ABC 選項"],
-    [Object.keys(data.endings).length,"結局路徑"],
-    [pass.size,"暫定通關路徑"]
-  ].map(([n,label])=>'<div class="stat"><strong>'+n+'</strong>'+label+'</div>').join("");
-  const root=data.nodes.S0;
-  document.getElementById("start-node").innerHTML='<div class="node-id">起點 · S0</div><h3>'+esc(root.title)+'</h3><p>'+esc(root.scene)+'</p>';
-  document.getElementById("branch-grid").innerHTML=letters.map(a=>{
-    const first=root.choices[a].next;
-    const firstNode=data.nodes[first];
-    return '<article class="branch"><div class="branch-head"><small>第一層 '+a+'｜'+esc(root.choices[a].label)+'</small><h3>'+esc(first)+' · '+esc(firstNode.title)+'</h3></div>'+
-      letters.map(b=>{
-        const second=firstNode.choices[b].next,secondNode=data.nodes[second];
-        return '<div class="subnode"><div class="node-id">第二層 '+b+' → '+esc(second)+'</div><strong>'+esc(secondNode.title)+'</strong><div class="finish-list">'+
-          letters.map(c=>{
-            const choice=secondNode.choices[c];
-            const end=choice.next;
-            return '<div class="end-chip'+(pass.has(end)?' pass':'')+'" title="'+esc(choice.label)+'"><span>'+esc(end)+'</span><small>'+(pass.has(end)?'過關':'未過關')+'</small></div>';
-          }).join("")+
-        '</div></div>';
-      }).join("")+'</article>';
-  }).join("");
-  document.getElementById("node-grid").innerHTML=order.map(id=>{
-    const node=data.nodes[id];
-    if(!node)return "";
-    return '<article class="script-card" id="node-'+esc(id)+'"><div class="script-top"><span class="script-id">'+esc(id)+'</span><h3>'+esc(node.title)+'</h3></div><p class="script-scene">'+esc(node.scene)+'</p><div class="choices">'+letters.map(letter=>{
-      const ch=node.choices[letter];
-      return '<div class="choice"><span class="choice-letter">'+letter+'</span><span class="choice-main"><strong>'+esc(ch.label)+'：</strong>'+esc(ch.text)+'</span><span class="choice-arrow">→ '+esc(ch.next)+'</span></div>';
-    }).join("")+'</div></article>';
-  }).join("");
-  const endings=Object.keys(data.endings).sort();
-  document.getElementById("outcome-rows").innerHTML=endings.map(id=>{
-    const e=data.endings[id];
-    return '<tr><td class="code">'+esc(id)+'</td><td class="step-cell">'+e.steps.map(esc).join(' → ')+'</td><td class="feedback-cell">'+esc(e.conclusion)+'</td><td class="feedback-cell">'+esc(e.positive)+'</td><td class="feedback-cell">'+esc(e.improve)+'</td><td class="status'+(pass.has(id)?' pass':'')+'">'+(pass.has(id)?'過關':'未過關')+'</td></tr>';
-  }).join("");
-  function csvDownload(name,rows){
-    const quote=v=>'"'+String(v??"").replace(/"/g,'""')+'"';
-    const lines=rows.map(row=>row.map(quote).join(",")).join("\r\n");
-    const blob=new Blob(["\uFEFF"+lines],{type:"text/csv;charset=utf-8;"});
-    const uri=URL.createObjectURL(blob);
-    const a=document.createElement("a");a.href=uri;a.download=name;a.style.display="none";
-    document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(uri);
-  }
-  document.getElementById("download-scenes").addEventListener("click",()=>{
-    const rows=[["節點","情境標題","情境內容","選項","四字標籤","原始對話","跳轉節點"]];
-    for(const id of order){
-      const n=data.nodes[id];if(!n)continue;
-      for(const letter of letters){const c=n.choices[letter];rows.push([id,n.title,n.scene,letter,c.label,c.text,c.next]);}
-    }
-    csvDownload("經彩青春協奏曲_13情境39選項.csv",rows);
-  });
-  document.getElementById("download-endings").addEventListener("click",()=>{
-    const rows=[["結局路徑","第一次選擇摘要","第二次選擇摘要","第三次選擇摘要","討論收束","做得好的地方","可以改進的地方","審議稿通關狀態"]];
-    for(const id of endings){const e=data.endings[id];rows.push([id,...e.steps,e.conclusion,e.positive,e.improve,pass.has(id)?"過關":"未過關"]);}
-    csvDownload("經彩青春協奏曲_27種結局回饋.csv",rows);
-  });
-  document.getElementById("print").addEventListener("click",()=>window.print());
+window.addEventListener('DOMContentLoaded',()=>{
+ const d=window.STORY_DATA;
+ if(!d){document.querySelector('.note').textContent='劇本資料載入失敗。';return}
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const get=id=>d.nodes[id];
+ document.getElementById('paths').innerHTML='ABC'.split('').map(a=>{
+  const node=get('S0').choices[a],branch=get(node.next);
+  return `<section class="path"><h3>${esc(a)}｜${esc(node.label)}</h3><p><span class="link">${esc(node.next)}</span> ${esc(branch.title)}</p>${'ABC'.split('').map(b=>{const p=branch.choices[b],node2=get(p.next);return `<p><span class="link">${esc(p.next)}</span> ${esc(node2.title)}</p>`}).join('')}</section>`;
+ }).join('');
+ document.getElementById('nodes').innerHTML=Object.entries(d.nodes).map(([id,node])=>`<section class="card"><span class="pill">${esc(id)}</span><h3>${esc(node.title)}</h3><p class="scene">${esc(node.scene)}</p>${'ABC'.split('').map(l=>{const q=node.choices[l];return `<div class="choice"><b>${l}｜${esc(q.label)}</b> ${esc(q.text)} <small>→ ${esc(q.next)}</small></div>`}).join('')}</section>`).join('');
+ document.getElementById('outcomes').innerHTML=Object.entries(d.endings).map(([route,o])=>`<section class="outcome"><h3>${route} ${d.passRoutes.includes(route)?'<span class="pass">成功通關</span>':''}</h3><ol class="steps">${o.steps.map(s=>'<li>'+esc(s)+'</li>').join('')}</ol><p><b>做得好的地方：</b>${esc(o.positive)}</p><p><b>可以改進的地方：</b>${esc(o.improve)}</p></section>`).join('');
+ const download=(filename,rows)=>{const csv='\ufeff'+rows.map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)};
+ document.getElementById('export-choices').addEventListener('click',()=>download('高中經彩do_情境選項.csv',[['節點','主題','情境','選項','行為標籤','選項內容','下一節點'],...Object.entries(d.nodes).flatMap(([id,n])=>'ABC'.split('').map(l=>[id,n.title,n.scene,l,n.choices[l].label,n.choices[l].text,n.choices[l].next]))]));
+ document.getElementById('export-outcomes').addEventListener('click',()=>download('高中經彩do_結局回饋.csv',[['路徑','通關','第一個選擇','第二個選擇','第三個選擇','做得好的地方','可以改進的地方'],...Object.entries(d.endings).map(([id,o])=>[id,d.passRoutes.includes(id)?'是':'否',...o.steps,o.positive,o.improve])]));
 });
 </script>
-</body>
-</html>
+</body></html>

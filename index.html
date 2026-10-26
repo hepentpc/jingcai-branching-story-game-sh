@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff7f7">
-  <meta name="description" content="經彩青春協奏曲：透過三次選擇，在群體對話中探索月經友善、資源公平、文化偏見與公民參與。">
-  <title>經彩青春協奏曲｜高中版分支遊戲</title>
+  <meta name="theme-color" content="#f8fbff">
+  <meta name="description" content="經彩青春do 高中版：透過青春同盟線上論壇，思辨生理假、月經貧窮、平權與公民參與。">
+  <title>經彩青春do｜高中版</title>
   <link rel="stylesheet" href="./assets/style.css">
   <script src="./data/story.js" defer></script>
   <script src="./assets/app.js" defer></script>
@@ -13,51 +13,41 @@
 <body>
 <div class="app-shell">
   <header class="site-header">
-    <a class="brand" id="brand-link" href="./" aria-label="回到經彩青春協奏曲封面">
+    <a class="brand" id="brand-link" href="./" aria-label="回到經彩青春do封面">
       <span class="brand-symbol">高中</span>
-     <span class="brand-name">經彩青春<span class="brand-highlight">協奏曲</span>
-  <small style="display:block;margin-top:3px;font-size:12px;font-weight:450;letter-spacing:0.04em;color:#61748a;line-height:1.5">月經教育 x 概念運用</small>
-</span>
+      <span class="brand-copy">
+        <span class="brand-name">經彩青春<span class="brand-highlight">do</span></span>
+        <span class="brand-subtitle">月經教育 × 概念運用</span>
+      </span>
     </a>
-    <button class="header-reset" type="button" id="header-reset" hidden>重新開始 <span aria-hidden="true">↗</span></button>
+    <button id="header-reset" class="header-reset" type="button" hidden>重新開始 <span aria-hidden="true">↗</span></button>
   </header>
   <main>
     <section class="view intro" id="intro" aria-labelledby="intro-title">
       <div class="intro-content">
-        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>從一場討論，看見不同立場</p>
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>從一場論壇討論，看見不同立場</p>
         <h1 id="intro-title">
           <span class="intro-question">每一個選擇，都能</span>
           <span class="intro-line">檢視公平</span>
           <span class="intro-line emphasis">尊重差異</span>
           <span class="intro-line">理性對話</span>
         </h1>
-        <p class="intro-tip">從補習班裡的月經友善討論開始，思考公平、尊嚴與公共行動。</p>
+        <p class="intro-tip">走進「青春同盟」線上論壇，在不同意見間思考生理假、月經貧窮、尊嚴與公民行動。</p>
       </div>
       <section class="guide-panel" aria-labelledby="guide-title">
         <div class="guide-header"><span class="guide-icon" aria-hidden="true">✦</span><div><p class="guide-eyebrow">出發前先看看</p><h2 id="guide-title">遊戲教學</h2></div></div>
         <div class="guide-screen" aria-live="off">
           <div class="guide-slide is-active" data-guide-slide="0" aria-hidden="false">
-            <div class="guide-illustration guide-read">
-              <div class="guide-paper" aria-hidden="true"><div class="paper-title"></div><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-line"></div></div>
-              <span class="guide-deco" aria-hidden="true">✧</span>
-            </div>
-            <h3>第一步：讀一讀</h3>
-            <p>閱讀四位同學的對話，理解各種立場背後的理由。</p>
+            <div class="guide-illustration guide-read" aria-hidden="true"><div class="guide-paper"><div class="paper-title"></div><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-line"></div></div><span class="guide-deco">✧</span></div>
+            <h3>第一步：讀一讀</h3><p>閱讀「青春同盟」的論壇情境，理解不同立場及爭議焦點。</p>
           </div>
           <div class="guide-slide" data-guide-slide="1" aria-hidden="true">
-            <div class="guide-illustration guide-choose" aria-hidden="true">
-              <div class="guide-choice">A</div><div class="guide-choice active">B <span>✓</span></div><div class="guide-choice">C</div>
-            </div>
-            <h3>第二步：選一選</h3>
-            <p>從三種回應中，選出你認為最合適的立場。</p>
+            <div class="guide-illustration guide-choose" aria-hidden="true"><div class="guide-choice">A</div><div class="guide-choice active">B <span>✓</span></div><div class="guide-choice">C</div></div>
+            <h3>第二步：選一選</h3><p>比較 A、B、C 三種回應，選擇你認為最適合的行動或觀點。</p>
           </div>
           <div class="guide-slide" data-guide-slide="2" aria-hidden="true">
-            <div class="guide-illustration guide-result" aria-hidden="true">
-              <span class="guide-check">✓</span>
-              <div class="guide-result-lines"><span></span><span></span><span></span></div>
-            </div>
-            <h3>第三步：看一看</h3>
-            <p>確認自己的三次選擇，查看討論收束與反思回饋。</p>
+            <div class="guide-illustration guide-result" aria-hidden="true"><span class="guide-check">✓</span><div class="guide-result-lines"><span></span><span></span><span></span></div></div>
+            <h3>第三步：看一看</h3><p>確認三次選擇，閱讀優點、改進方向與關卡認證結果。</p>
           </div>
         </div>
         <div class="guide-picks" aria-label="切換遊戲教學">
@@ -65,82 +55,50 @@
           <button class="guide-pick" type="button" data-guide="1" aria-pressed="false">選一選</button>
           <button class="guide-pick" type="button" data-guide="2" aria-pressed="false">看一看</button>
         </div>
-        <p class="guide-intro">予晴、柏宇、子涵與怡庭正在討論免費生理用品。加入對話、選擇立場，看看不同觀點如何發展。</p>
-        <div class="intro-stats" aria-label="旅程玩法">
-          <span><strong>3</strong> 次選擇</span>
-          <span class="stat-divider" aria-hidden="true"></span>
-          <span><strong>27</strong> 種結局</span>
-          <span class="stat-divider" aria-hidden="true"></span>
-          <span><strong>∞</strong> 種學習可能</span>
-        </div>
+        <p class="guide-intro">「青春同盟」邀請你加入討論。三回合做出選擇，看看不同觀點如何帶來不同結果。</p>
+        <div class="intro-stats" aria-label="旅程玩法"><span><strong>3</strong> 次選擇</span><span class="stat-divider" aria-hidden="true"></span><span><strong>27</strong> 種結局</span><span class="stat-divider" aria-hidden="true"></span><span><strong>∞</strong> 種學習可能</span></div>
         <button class="primary-btn" id="start-btn" type="button">開始旅程 <span aria-hidden="true">→</span></button>
       </section>
     </section>
+
     <section class="view game" id="game" hidden aria-labelledby="scene-title">
-      <div class="step-top">
-        <div>
-          <h1 class="step-heading">你的討論正在展開</h1>
-          <p class="step-desc">閱讀同學的討論，辨識不同立場，選擇你最認同的回應。</p>
-        </div>
-        <div class="step-fraction" id="step-fraction">01 <span>/ 03</span></div>
-      </div>
+      <div class="step-top"><div><h1 class="step-heading">你的討論正在展開</h1><p class="step-desc">閱讀線上論壇的發言，辨識不同觀點，再決定你的回應。</p></div><div class="step-fraction" id="step-fraction">01 <span>/ 03</span></div></div>
       <div class="progress-track" aria-label="旅程進度"><div id="progress-fill" class="progress-fill"></div></div>
       <div class="scene-layout">
-        <div class="scene-visual">
-          <div class="visual-topline"><span class="visual-tag">第 <span id="scene-number">1</span> 個情境</span><span class="visual-decor" aria-hidden="true">✳</span></div>
-          <div class="image-frame">
-            <img id="scene-image" class="scene-image" alt="" loading="eager" decoding="async" hidden>
-            <div id="image-placeholder" class="image-placeholder" role="img" aria-label="劇情圖片（尚未放入）"><span class="placeholder-mark" aria-hidden="true">✦</span><span>劇情圖片</span></div>
-          </div>
-          <p class="visual-caption">想一想：不同立場的理由與限制是什麼？</p>
+        <div class="scene-visual"><div class="visual-topline"><span class="visual-tag">第 <span id="scene-number">1</span> 個情境</span><span class="visual-decor" aria-hidden="true">✳</span></div>
+          <div class="image-frame"><img id="scene-image" class="scene-image" alt="" loading="eager" decoding="async" hidden><div id="image-placeholder" class="image-placeholder" role="img" aria-label="劇情圖片預留區"><span class="placeholder-mark" aria-hidden="true">✦</span><span>劇情圖片</span></div></div>
+          <p class="visual-caption">想一想：這場討論的核心問題是什麼？</p>
         </div>
-        <div class="scene-content">
-          <div class="scene-kicker"><span id="scene-chip">情境 1</span><span class="scene-separator" aria-hidden="true"></span><span>月經友善議題</span></div>
-          <h2 id="scene-title" tabindex="-1">免費生理用品，應不應該提供？</h2>
+        <div class="scene-content"><div class="scene-kicker"><span id="scene-chip">情境 1</span><span class="scene-separator" aria-hidden="true"></span><span>青春同盟・月經友善思辨</span></div>
+          <h2 id="scene-title" tabindex="-1">生理假公平性爭議</h2>
           <p id="scene-narrative" class="scene-narrative"></p>
-          <div class="choose-heading"><h3>這時候，你的選擇是甚麼</h3><span>選一項想說或想做的</span></div>
-          <div class="choices" id="choices" aria-label="三個回答"></div>
-          <p class="keyboard-hint">點選你的立場，繼續下一段討論。也可以使用鍵盤 A／B／C。</p>
+          <div class="choose-heading"><h3>這時候，你的選擇是什麼？</h3><span>選出你最認同的回應</span></div>
+          <div id="choices" class="choices" aria-label="三個回答"></div>
+          <p class="keyboard-hint">點選一項回應繼續，也可以使用鍵盤 A／B／C。</p>
         </div>
       </div>
-      <div class="game-footer">
-        <button id="back-btn" class="back-btn" type="button">← 回到上一個情境</button>
-        <span class="route-trail" id="route-trail" aria-live="polite"></span>
-      </div>
+      <div class="game-footer"><button id="back-btn" class="back-btn" type="button">← 回到上一個情境</button><span class="route-trail" id="route-trail" aria-live="polite"></span></div>
     </section>
+
     <section class="view ending" id="ending" hidden aria-labelledby="ending-title">
-      <div class="ending-hero">
-        <div class="ending-icon" aria-hidden="true">✦</div>
-        <p class="eyebrow">三次選擇完成</p>
-        <h1 id="ending-title" tabindex="-1">你選擇的立場，形成了一段討論。</h1>
-        <p id="ending-intro">先看看自己做的三次選擇，想一想，再決定要不要送出。</p>
-      </div>
+      <div class="ending-hero"><div class="ending-icon" aria-hidden="true">✦</div><p class="eyebrow">三次選擇完成</p><h1 id="ending-title" tabindex="-1">你的選擇，形成了一段思考旅程。</h1><p id="ending-intro">先看看自己的三次選擇，想清楚後，再決定是否送出。</p></div>
       <div class="ending-body">
-        <section aria-labelledby="summary-heading">
-          <div class="section-heading"><span class="section-number">一</span><h2 id="summary-heading">回顧你的三次選擇</h2><span id="ending-code" class="route-badge">路徑 ABB</span></div>
-          <ol class="journey-steps" id="journey-steps"></ol>
-          <div id="confirm-actions" class="confirm-actions">
-            <p>你確定要用這三個選擇，完成這趟旅程嗎？</p>
-            <div class="actions-row">
-              <button id="rethink-btn" class="secondary-btn" type="button">← 回頭再想一次</button>
-              <button id="confirm-btn" class="primary-btn" type="button">確定選擇 <span aria-hidden="true">→</span></button>
-            </div>
-          </div>
+        <section aria-labelledby="summary-heading"><div class="section-heading"><span class="section-number">一</span><h2 id="summary-heading">這是你選擇的旅程</h2><span id="ending-code" class="route-badge">路徑 AAA</span></div>
+          <ol id="journey-steps" class="journey-steps"></ol>
+          <div id="confirm-actions" class="confirm-actions"><p>你確定要用這三個選擇，完成這趟旅程嗎？</p><div class="actions-row"><button id="rethink-btn" class="secondary-btn" type="button">← 回頭再想一次</button><button id="confirm-btn" class="primary-btn" type="button">確定選擇 <span aria-hidden="true">→</span></button></div></div>
         </section>
-        <section id="feedback-section" class="feedback-section" aria-labelledby="feedback-heading" hidden>
-          <div class="section-heading"><span class="section-number">二</span><h2 id="feedback-heading" tabindex="-1">這場討論帶來的反思</h2></div>
+        <section id="feedback-section" class="feedback-section" aria-labelledby="feedback-heading" hidden><div class="section-heading"><span class="section-number">二</span><h2 id="feedback-heading" tabindex="-1">看看這次旅程的回饋</h2></div>
           <div class="feedback-grid">
-            <article class="feedback-card conclusion"><div class="feedback-icon" aria-hidden="true">✦</div><h3>討論收束</h3><p id="conclusion-text"></p></article>
             <article class="feedback-card positive"><div class="feedback-icon" aria-hidden="true">✓</div><h3>做得好的地方</h3><p id="positive-text"></p></article>
             <article class="feedback-card improve"><div class="feedback-icon" aria-hidden="true">↗</div><h3>可以改進的地方</h3><p id="improve-text"></p></article>
-            <article class="feedback-card result"><div class="feedback-icon" id="status-icon" aria-hidden="true">★</div><h3>過關狀態</h3><p id="status-text" aria-live="polite"></p></article>
+            <article class="feedback-card result"><div id="status-icon" class="feedback-icon" aria-hidden="true">★</div><h3>關卡認證</h3><p id="status-text" aria-live="polite"></p></article>
           </div>
-          <div class="ending-actions"><button class="primary-btn" id="again-btn" type="button">回到最初，再挑戰一次 <span aria-hidden="true">→</span></button></div>
+          <div class="ending-actions"><button id="again-btn" class="primary-btn" type="button">回到最初，再挑戰一次 <span aria-hidden="true">→</span></button></div>
         </section>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><span>經彩青春協奏曲 · 高中版公共議題思辨</span><span>高中版 · <a href="./story-grid.html">劇本網格</a></span></footer>
+  <footer class="site-footer"><span>經彩青春do · 月經教育 × 概念運用</span><span>高中版｜青春同盟</span></footer>
 </div>
 </body>
 </html>
