@@ -37,7 +37,18 @@ test('27 條路徑都能走完且送出才揭露成功／未通關及雙向回�
   assert.equal(e['positive-text'].textContent,d.endings[route].positive,route);
   assert.equal(e['improve-text'].textContent,d.endings[route].improve,route);
   assert.equal(e['status-text'].card.classList.contains('passed'),d.passRoutes.includes(route),route);
-  assert.ok(!e['status-text'].textContent.includes('2599'),route);
+  if(d.passRoutes.includes(route)){
+   assert.equal(e['status-text'].textContent,'恭喜你成功通關！\n獲得【經彩青春Do密碼】2599\n意義：愛我久久',route);
+  }else{
+   assert.equal(e['status-text'].textContent,'沒有過關，繼續加油，重新開啟另一個旅程，獲得通關密碼！',route);
+  }
+  assert.equal(e['ending-intro'].textContent,'看看你做得好的地方，還有哪些地方可以做得更好。',route);
+  const html=e['journey-steps'].innerHTML;
+  for (const description of Object.values(d.nodes).flatMap(n=>Object.values(n.choices).map(x=>x.text))){
+   assert.ok(!html.includes(description), route);
+  }
+  assert.ok(!html.includes('journey-desc'),route);
+  assert.equal((html.match(/class="journey-label"/g)||[]).length,3,route);
   g.click('again-btn');assert.equal(e.intro.hidden,false,route);
  }
 });

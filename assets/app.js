@@ -1,4 +1,4 @@
-/* 經彩青春do｜高中版分支互動遊戲：三次選擇、兩階段結尾及回饋。 */
+/* 經彩青春Do｜高中版分支互動遊戲：三次選擇、兩階段結尾及回饋。 */
 (() => {
   'use strict';
   const story = window.STORY_DATA;
@@ -70,17 +70,17 @@
     if(!ending||trail.length!==3) throw Error('結局或選擇次數不正確');
     dom.code.textContent='路徑 '+finished;dom.code.dataset.route=finished;
     // Use the actual played choices; never mismatch Word outcome summary with A/B/C routing.
-    dom.journey.innerHTML=trail.map(t=>'<li><span class="journey-label">'+escapeHtml(t.label)+'</span><span class="journey-desc">'+escapeHtml(t.text)+'</span></li>').join('');
+    dom.journey.innerHTML=trail.map(t=>'<li><span class="journey-label">'+escapeHtml(t.label)+'</span></li>').join('');
     dom.positive.textContent=ending.positive;
     dom.improve.textContent=ending.improve;
     dom.confirmActions.hidden=confirmed;dom.feedbackSection.hidden=!confirmed;
-    dom.endingIntro.textContent=confirmed?'完成了本次旅程，請閱讀你的優點、改進方向和關卡認證。':'先看看自己的三次選擇。想清楚後，再按下確定選擇。';
+    dom.endingIntro.textContent=confirmed?'看看你做得好的地方，還有哪些地方可以做得更好。':'先看看自己的三次選擇。想清楚後，再按下確定選擇。';
     const passed=passRoutes.has(finished);
     const card=dom.status.closest('.feedback-card');
     card.classList.toggle('passed',passed);card.classList.toggle('retry',!passed);
     dom.statusIcon.textContent=passed?'★':'↻';
-    // 高中版尚未指定專屬通關密碼，不能虛構或挪用國中版密碼。
-    dom.status.textContent=passed?'恭喜你成功通關！\n你已完成高中版的關鍵思辨路徑。':'這次尚未通關。\n閱讀回饋後，可以重新挑戰其他回應方式。';
+    // 通關密碼依使用者指定，與國中版本一致；僅在成功通關時顯示。
+    dom.status.textContent=passed?'恭喜你成功通關！\n獲得【經彩青春Do密碼】2599\n意義：愛我久久':'沒有過關，繼續加油，重新開啟另一個旅程，獲得通關密碼！';
     show('ending');focus(confirmed?dom.feedbackHeading:dom.endingTitle);
   }
   function rethink(){

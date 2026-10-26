@@ -43,7 +43,9 @@ test('BB2、BC2 的交叉 END 誤植依 A/B/C 語意正規化',()=>{
 });
 test('前端移除討論收束，仍保有國中版相同的三張回饋卡',()=>{
  const html=read('index.html'),app=read('assets/app.js');
- assert.ok(html.includes('經彩青春<span class="brand-highlight">do</span>'));
+ assert.ok(html.includes('經彩青春<span class="brand-highlight">Do</span>'));
+ assert.ok(html.includes('一場月經健康與福祉的永續之旅'));
+ assert.ok(!html.includes('從一場論壇討論，看見不同立場'));
  assert.ok(!html.includes('conclusion-text'));
  assert.ok(!html.includes('討論收束'));
  assert.ok(html.includes('做得好的地方')&&html.includes('可以改進的地方')&&html.includes('關卡認證'));

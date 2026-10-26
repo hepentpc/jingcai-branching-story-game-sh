@@ -2,7 +2,7 @@
    原文件 BB2、BC2 的 END_ 路徑有交叉誤植，採選項 A/B/C 對應的正規路徑及回饋語意。
    本檔為劇情資料的唯一來源；通關路徑依文件的「成功通關」標記設定。 */
 window.STORY_DATA = {
-  "app": "經彩青春do",
+  "app": "經彩青春Do",
   "edition": "高中版",
   "sourceVersion": "高中經彩DO_分支與選項+回饋.docx（2026-10-26版）",
   "start": "S0",

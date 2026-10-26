@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
-<title>經彩青春do｜高中版劇本網格</title>
+<title>經彩青春Do｜高中版劇本網格</title>
 <script src="./data/story.js" defer></script>
 <style>
 :root{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#22324b;background:#f8fbff;font-size:17px}
@@ -11,7 +11,7 @@
 </head>
 <body>
 <main>
-<div class="top"><div><h1>高中版劇本網格</h1><p style="margin:0;color:#61758f">經彩青春do｜青春同盟線上論壇</p></div><div class="actions"><a class="btn" href="./">返回遊戲</a><button id="export-choices" class="btn" type="button">下載選項 CSV</button><button id="export-outcomes" class="btn" type="button">下載結局 CSV</button></div></div>
+<div class="top"><div><h1>高中版劇本網格</h1><p style="margin:0;color:#61758f">經彩青春Do｜青春同盟線上論壇</p></div><div class="actions"><a class="btn" href="./">返回遊戲</a><button id="export-choices" class="btn" type="button">下載選項 CSV</button><button id="export-outcomes" class="btn" type="button">下載結局 CSV</button></div></div>
 <div class="note">本頁供教師核對劇本。文字以最新高中 Word 為依據；原始表格 BB2 與 BC2 的部分 END 代碼與選項順序交叉，系統已依 A／B／C 選項及回饋意義校正。成功通關路徑依原稿標示，不另創密碼。</div>
 <div class="summary"><span><strong>13</strong> 個情境節點</span><span><strong>39</strong> 個選項</span><span><strong>27</strong> 個結局</span><span><strong>4</strong> 條通關路徑</span></div>
 <h2>三回合分支總覽</h2><div class="paths" id="paths"></div>
@@ -31,8 +31,8 @@ window.addEventListener('DOMContentLoaded',()=>{
  document.getElementById('nodes').innerHTML=Object.entries(d.nodes).map(([id,node])=>`<section class="card"><span class="pill">${esc(id)}</span><h3>${esc(node.title)}</h3><p class="scene">${esc(node.scene)}</p>${'ABC'.split('').map(l=>{const q=node.choices[l];return `<div class="choice"><b>${l}｜${esc(q.label)}</b> ${esc(q.text)} <small>→ ${esc(q.next)}</small></div>`}).join('')}</section>`).join('');
  document.getElementById('outcomes').innerHTML=Object.entries(d.endings).map(([route,o])=>`<section class="outcome"><h3>${route} ${d.passRoutes.includes(route)?'<span class="pass">成功通關</span>':''}</h3><ol class="steps">${o.steps.map(s=>'<li>'+esc(s)+'</li>').join('')}</ol><p><b>做得好的地方：</b>${esc(o.positive)}</p><p><b>可以改進的地方：</b>${esc(o.improve)}</p></section>`).join('');
  const download=(filename,rows)=>{const csv='\ufeff'+rows.map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)};
- document.getElementById('export-choices').addEventListener('click',()=>download('高中經彩do_情境選項.csv',[['節點','主題','情境','選項','行為標籤','選項內容','下一節點'],...Object.entries(d.nodes).flatMap(([id,n])=>'ABC'.split('').map(l=>[id,n.title,n.scene,l,n.choices[l].label,n.choices[l].text,n.choices[l].next]))]));
- document.getElementById('export-outcomes').addEventListener('click',()=>download('高中經彩do_結局回饋.csv',[['路徑','通關','第一個選擇','第二個選擇','第三個選擇','做得好的地方','可以改進的地方'],...Object.entries(d.endings).map(([id,o])=>[id,d.passRoutes.includes(id)?'是':'否',...o.steps,o.positive,o.improve])]));
+ document.getElementById('export-choices').addEventListener('click',()=>download('高中經彩Do_情境選項.csv',[['節點','主題','情境','選項','行為標籤','選項內容','下一節點'],...Object.entries(d.nodes).flatMap(([id,n])=>'ABC'.split('').map(l=>[id,n.title,n.scene,l,n.choices[l].label,n.choices[l].text,n.choices[l].next]))]));
+ document.getElementById('export-outcomes').addEventListener('click',()=>download('高中經彩Do_結局回饋.csv',[['路徑','通關','第一個選擇','第二個選擇','第三個選擇','做得好的地方','可以改進的地方'],...Object.entries(d.endings).map(([id,o])=>[id,d.passRoutes.includes(id)?'是':'否',...o.steps,o.positive,o.improve])]));
 });
 </script>
 </body></html>
